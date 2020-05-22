@@ -7,8 +7,8 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/bsab123/spring-cloud-netflix/config-respo
-          search-paths: respo
+          uri: https://github.com/bsab123/spring-cloud-netflix
+          search-paths: config-respo
           username: bsab123
           password: xjx279205343
 
