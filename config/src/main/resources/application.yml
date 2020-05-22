@@ -8,7 +8,7 @@ spring:
       server:
         git:
           uri: https://github.com/bsab123/spring-cloud-netflix
-          search-paths: config-respo
+          search-paths: respo
           username: bsab123
           password: xjx279205343
 
