@@ -1,10 +1,10 @@
-package org.caps.privider;
+package org.caps.provider;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PrividerApplicationTests {
+class ProviderApplicationTests {
 
     @Test
     void contextLoads() {
