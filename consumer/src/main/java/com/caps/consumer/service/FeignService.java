@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "spring-cloud-service-provider",fallback = FeignServiceHystrix.class)
+@FeignClient(value = "spring-cloud-service-provider", fallback = FeignServiceHystrix.class)
 public interface FeignService {
 
     @RequestMapping(value = "hi", method = RequestMethod.GET)
