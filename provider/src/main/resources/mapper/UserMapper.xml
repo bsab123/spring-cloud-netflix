@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.caps.provider.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="org.caps.provider.domain.User">
+    <!--@mbg.generated-->
+    <!--@Table user-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="acount" jdbcType="VARCHAR" property="acount" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `password`, acount, `name`, avatar, gender, address, room_id
+  </sql>
+
+  <resultMap id="UserResultMap" type="org.caps.provider.domain.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="acount" jdbcType="VARCHAR" property="acount" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <association property="room" javaType="org.caps.provider.domain.Room">
+      <!-- 关联条件Employee的dept_id对应着Department的id -->
+      <id column="id" property="id"/>
+      <result column="roomnumber" property="roomnumber"/>
+      <result column="bname" property="bname"/>
+      <result column="time" property="time"/>
+      <result column="status" property="status"/>
+    </association>
+  </resultMap>
+  <sql id="User_Column_List">
+    <!--@mbg.generated generated on Tue Dec 24 13:36:30 CST 2019.-->
+    id, product_id, sale_attr_name
+  </sql>
+  <select id="getAllUserInfo" resultMap="UserResultMap">
+    SELECT
+        *
+    FROM
+        USER u
+        LEFT JOIN room r ON u.room_id = r.id
+    GROUP BY
+        u.id
+  </select>
+</mapper>
