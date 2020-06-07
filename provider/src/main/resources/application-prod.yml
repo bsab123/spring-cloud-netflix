@@ -37,7 +37,6 @@ spring:
       connection-timeout: 30000
       connection-test-query: SELECT 1
 
-
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     producer:
@@ -47,7 +46,11 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       retries: 0
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
+  data:
+    data:
+      elasticsearch:
+        cluster-name: elasticsearch
+        cluster-nodes: 47.100.220.7:9300
 server:
   port: 8762
   servlet:
